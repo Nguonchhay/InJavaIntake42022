@@ -1,6 +1,12 @@
 package com.nguonchhay;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class JavaIntake4 {
     public static void main(String[] args) {
@@ -101,6 +107,38 @@ public class JavaIntake4 {
 //            System.out.println("Result = " + result);
 //        }
 
+        // Task 5 solution
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Enter name: ");
+//        String name = scanner.nextLine();
+//
+//        System.out.print("Enter birth date (mm/dd/yyy): ");
+//        String strBirthDate = scanner.nextLine();
+//
+//        Calendar calendar = Calendar.getInstance();
+//        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyy", Locale.ENGLISH);
+//
+//        try {
+//            Date birthDate = sdf.parse(strBirthDate);
+//            long timeDiff = Math.abs(calendar.getTimeInMillis() - birthDate.getTime());
+//            /**
+//             * 1s = 1000ms
+//             * 1m = 60s
+//             * 1h = 60m
+//             * 1d = 24h
+//             */
+//            long days = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
+//            int age = (int)(days / 365);
+//            int day = (int)(days % 365);
+//
+//            System.out.println(
+//                String.format("Welcome to %s! you are %d year(s) old and days %d.", name, age, day)
+//            );
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+
         // Task 6 solution
         /**
          * Input sentence: this is A SAMple SENtenCE
@@ -113,19 +151,71 @@ public class JavaIntake4 {
          * 5. Replace the first letter on piece => This, Is, A, Sample, Sentence
          * 6. Combine all piece with space => This Is A Sample Sentence
          */
-        System.out.print("Enter sentence to format: ");
+//        System.out.print("Enter sentence to format: ");
+//        Scanner scanner = new Scanner(System.in);
+//        String inputSentence = scanner.nextLine();
+//        String uppercase = inputSentence.toLowerCase();
+//        String[] splitString = uppercase.split(" ");
+//        int count = splitString.length;
+//        String outputSentence = "";
+//        for (int i = 0; i < count; i++) {
+//            String firstLetter = splitString[i].substring(0, 1).toUpperCase();
+//            String newWord = firstLetter + splitString[i].substring(1);
+//            outputSentence += " " + newWord;
+//        }
+//        System.out.println("Input sentence = " + inputSentence);
+//        System.out.println("Out sentence = " + outputSentence);
+
+        // Task 7 solution
+        /**
+         * Sum the number from 1 to the input number
+         * Example: inputNumber = 5 then sum = 1+2+3+4+5 = 15
+         *          inputNumber = 3 then sum = 1+2+3 = 6
+         */
         Scanner scanner = new Scanner(System.in);
-        String inputSentence = scanner.nextLine();
-        String uppercase = inputSentence.toLowerCase();
-        String[] splitString = uppercase.split(" ");
-        int count = splitString.length;
-        String outputSentence = "";
-        for (int i = 0; i < count; i++) {
-            String firstLetter = splitString[i].substring(0, 1).toUpperCase();
-            String newWord = firstLetter + splitString[i].substring(1);
-            outputSentence += " " + newWord;
+        System.out.print("Enter number: ");
+        int number = scanner.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= number; i++) {
+            System.out.print(i);
+            if (i < number) {
+                System.out.print(" + ");
+            }
+            sum += i; // sum = sum + i;
         }
-        System.out.println("Input sentence = " + inputSentence);
-        System.out.println("Out sentence = " + outputSentence);
+        System.out.print(" = " + sum);
+//        int number, start, sum;
+//        char answer;
+//        do {
+//            sum = 0;
+//            start = 1;
+//            System.out.print("\nEnter number: ");
+//            number = scanner.nextInt();
+//            while (start <= number) {
+//                sum += start;
+//                start += 1;
+//            }
+//            System.out.println("Sum = " + sum);
+//            System.out.print("==> Press y to run again: ");
+//            scanner.nextLine();
+//            answer = scanner.nextLine().charAt(0);
+//        } while(answer == 'y');
+//        while (true) {
+//            sum = 0;
+//            start = 1;
+//            System.out.print("Enter number: ");
+//            number = scanner.nextInt();
+//            while (start <= number) {
+//                sum += start;
+//                start += 1;
+//            }
+//            System.out.println("Sum = " + sum);
+//            System.out.print("==> Press 'y' to run again: ");
+//            scanner.nextLine();
+//            answer = scanner.nextLine().charAt(0);
+//            if (answer != 'y') {
+//                break;
+//            }
+//        }
     }
 }
