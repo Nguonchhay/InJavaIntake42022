@@ -116,11 +116,11 @@ public class Week2Demo {
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
 
-        System.out.print("Enter birth date (mm/dd/yyy): ");
+        System.out.print("Enter birth date (mm/dd/yyyy): ");
         String strBirthDate = scanner.nextLine();
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyy", Locale.ENGLISH);
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
 
         try {
             Date birthDate = sdf.parse(strBirthDate);
