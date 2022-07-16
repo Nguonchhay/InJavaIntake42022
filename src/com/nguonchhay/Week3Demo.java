@@ -1,6 +1,7 @@
 package com.nguonchhay;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Week3Demo {
     public void task1() {
@@ -121,5 +122,63 @@ public class Week3Demo {
             }
         }
         System.out.println("\nSecond max = " + secondMax);
+    }
+
+    public void task5_1() {
+        int[] numbers = {1, 6, 6, 2, 6};
+        int firstMaxValue = numbers[0];
+        int secondMaxValue = numbers[1];
+        if ( numbers[0] < numbers[1]) {
+            firstMaxValue = numbers[1];
+            secondMaxValue = numbers[0];
+        }
+        for (int i = 2; i < numbers.length; i++) {
+            if (numbers[i] > firstMaxValue) {
+                secondMaxValue = firstMaxValue;
+                firstMaxValue = numbers[i];
+            } else {
+                if (numbers[i] > secondMaxValue && numbers[i] < firstMaxValue) {
+                    secondMaxValue = numbers[i];
+                }
+            }
+        }
+        System.out.println("First max: " + firstMaxValue + ", second max: " + secondMaxValue);
+    }
+
+    public void task6() {
+        Scanner scanner = new Scanner(System.in);
+        char answer = ' ';
+        String[] names = new String[100];
+        double[] unitPrices = new double[100];
+        int[] quantities = new int[100];
+        int index = 0;
+
+        do {
+            System.out.print("Product name: ");
+            names[index] = scanner.nextLine();
+
+            System.out.print("Unit price: ");
+            unitPrices[index] = scanner.nextDouble();
+
+            System.out.print("Quantity: ");
+            quantities[index] = scanner.nextInt();
+
+            scanner.nextLine();
+            System.out.print("\nPress y to continue shopping: ");
+            answer = scanner.nextLine().charAt(0);
+
+            index++;
+        } while(answer == 'y' || answer == 'Y');
+
+        System.out.println("\n                              Invoice                        ");
+        System.out.println("\n--------------------------------------------------------------");
+        double total = 0.0;
+        for (int i = 0; i < index; i++) {
+            double subTotal = unitPrices[i] * quantities[i];
+            total += subTotal;
+            System.out.println((i + 1) + ". Name: " + names[i] + ", Unit Price: " + unitPrices[i] + ", Quantity: " + quantities[i] + ", Total: " + subTotal);
+        }
+        System.out.println("\n--------------------------------------------------------------");
+        System.out.println("\n                                                  Total: " + total);
     }
 }
