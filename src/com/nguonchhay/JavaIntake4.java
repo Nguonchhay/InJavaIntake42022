@@ -12,15 +12,19 @@ public class JavaIntake4 {
 //        week2Demo.task6();
 
         // Week 3 practice
-        Week3Demo week3Demo = new Week3Demo();
+//        Week3Demo week3Demo = new Week3Demo();
 //        week3Demo.task1();
 //        week3Demo.task2();
 //        week3Demo.task2_1();
 //        week3Demo.task3();
 //        week3Demo.task4();
 //        week3Demo.task5();
-        week3Demo.task5_1();
+//        week3Demo.task5_1();
 //        week3Demo.task6();
 
+        // Week 4 practice
+//        Week4Demo.task1();
+//        Week4Demo.task2();
+        Week4Demo.task3();
     }
 }
